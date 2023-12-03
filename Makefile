@@ -9,7 +9,6 @@ SRCS = operations_a.c \
   operations_b.c \
   parser.c \
   main.c \
-  utils.c \
   one_stack_sort.c
 
 OBJS = $(SRCS:.c=.o)
