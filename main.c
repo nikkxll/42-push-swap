@@ -6,7 +6,7 @@
 /*   By: dmitriinikiforov <dmitriinikiforov@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 12:39:04 by dnikifor          #+#    #+#             */
-/*   Updated: 2023/12/03 22:49:03 by dmitriiniki      ###   ########.fr       */
+/*   Updated: 2023/12/04 00:56:01 by dmitriiniki      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ int	main(int argc, char *argv[])
 		write(2, "Error\n", 6);
 		return (0);
 	}
-	if (parse_args(&stack_a, &stack_b, argc, argv))
+	if (array_creation(&stack_a, &stack_b, argc, argv))
 		return (0);
-
+	
 	printf("before: ");
 	while (i < stack_a.size)
 	{

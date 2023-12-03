@@ -6,13 +6,13 @@
 /*   By: dmitriinikiforov <dmitriinikiforov@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 18:49:09 by dnikifor          #+#    #+#             */
-/*   Updated: 2023/12/03 21:51:08 by dmitriiniki      ###   ########.fr       */
+/*   Updated: 2023/12/04 00:41:41 by dmitriiniki      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	array_creation(t_ps *list, int argc, char **argv)
+static void	converter(t_ps *list, int argc, char **argv)
 {
 	int	i;
 
@@ -46,17 +46,12 @@ static int	check_duplicates(int argc, t_ps *stack_a)
 	return (0);
 }
 
-int	parse_args(t_ps *stack_a, t_ps *stack_b, int argc, char **argv)
+static int	is_valid_args(int argc, char **argv)
 {
 	int	i;
 	int	j;
 
 	i = 1;
-	stack_a->array = (int *)malloc((argc - 1) * sizeof(int));
-	stack_b->array = (int *)malloc((argc - 1) * sizeof(int));
-	stack_b->size = 0;
-	if (!stack_a->array)
-		return (0);
 	while (i < argc)
 	{
 		j = 0;
@@ -72,7 +67,24 @@ int	parse_args(t_ps *stack_a, t_ps *stack_b, int argc, char **argv)
 		}
 		i++;
 	}
-	array_creation(stack_a, argc, argv);
+	return (0);
+}
+
+int	array_creation(t_ps *stack_a, t_ps *stack_b, int argc, char **argv)
+{
+	stack_a->array = (int *)malloc((argc - 1) * sizeof(int));
+	if (!stack_a->array)
+		return (1);
+	stack_b->array = (int *)malloc((argc - 1) * sizeof(int));
+	if (!stack_b->array)
+	{
+		free(stack_b->array);
+		return (1);
+	}
+	stack_b->size = 0;
+	if (is_valid_args(argc, argv) != 0)
+		return (1);
+	converter(stack_a, argc, argv);
 	if (check_duplicates(argc, stack_a))
 		return (write(2, "Error\n", 6));
 	return (0);
