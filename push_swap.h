@@ -6,7 +6,7 @@
 /*   By: dmitriinikiforov <dmitriinikiforov@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:33:22 by dnikifor          #+#    #+#             */
-/*   Updated: 2023/12/04 00:39:37 by dmitriiniki      ###   ########.fr       */
+/*   Updated: 2023/12/04 01:47:09 by dmitriiniki      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ void	push_b_a(t_ps *list_first, t_ps *list_second);
 int		array_creation(t_ps *stack_a, t_ps *stack_b, int argc, char **argv);
 void	three_num_sort(t_ps *stack_a, int a, int b, int c);
 void	two_num_sort(t_ps *stack_a, int a, int b);
-void    two_stack_sort(t_ps *stack_a, t_ps *stack_b);
+void	two_stack_sort(t_ps *stack_a, t_ps *stack_b);
+void	support_array_creation(t_ps *support, t_ps *stack_a);
 
 #endif

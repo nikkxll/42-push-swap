@@ -6,7 +6,7 @@
 /*   By: dmitriinikiforov <dmitriinikiforov@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 17:33:27 by dnikifor          #+#    #+#             */
-/*   Updated: 2023/12/03 23:02:34 by dmitriiniki      ###   ########.fr       */
+/*   Updated: 2023/12/04 01:46:56 by dmitriiniki      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
