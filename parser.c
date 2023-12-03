@@ -6,23 +6,23 @@
 /*   By: dmitriinikiforov <dmitriinikiforov@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 18:49:09 by dnikifor          #+#    #+#             */
-/*   Updated: 2023/12/03 18:02:12 by dmitriiniki      ###   ########.fr       */
+/*   Updated: 2023/12/03 21:51:08 by dmitriiniki      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	array_creation(t_ps *stack_a, int argc, char **argv)
+void	array_creation(t_ps *list, int argc, char **argv)
 {
 	int	i;
 
 	i = 1;
 	while (i < argc)
 	{
-		stack_a->array[i - 1] = ft_atoi(argv[i]);
+		list->array[i - 1] = ft_atoi(argv[i]);
 		i++;
 	}
-	stack_a->size = argc - 1;
+	list->size = argc - 1;
 }
 
 static int	check_duplicates(int argc, t_ps *stack_a)
@@ -46,13 +46,15 @@ static int	check_duplicates(int argc, t_ps *stack_a)
 	return (0);
 }
 
-int	parse_args(t_ps *stack_a, int argc, char **argv)
+int	parse_args(t_ps *stack_a, t_ps *stack_b, int argc, char **argv)
 {
 	int	i;
 	int	j;
 
 	i = 1;
 	stack_a->array = (int *)malloc((argc - 1) * sizeof(int));
+	stack_b->array = (int *)malloc((argc - 1) * sizeof(int));
+	stack_b->size = 0;
 	if (!stack_a->array)
 		return (0);
 	while (i < argc)

@@ -6,7 +6,7 @@
 /*   By: dmitriinikiforov <dmitriinikiforov@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 12:39:04 by dnikifor          #+#    #+#             */
-/*   Updated: 2023/12/03 19:01:59 by dmitriiniki      ###   ########.fr       */
+/*   Updated: 2023/12/03 22:49:03 by dmitriiniki      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,26 +16,34 @@ int	main(int argc, char *argv[])
 {
 	t_ps stack_a;
 	t_ps stack_b;
+	int i;
+	
+	i = 0;
 	
 	if (argc < 2)
 	{
 		write(2, "Error\n", 6);
 		return (0);
 	}
-	if (parse_args(&stack_a, argc, argv))
+	if (parse_args(&stack_a, &stack_b, argc, argv))
 		return (0);
-	// swap_a(&stack_a);
-	// reverse_rotate_a(&stack_a);
-	// rotate_a(&stack_a);
-	// push_a_b(&stack_a, &stack_b);
-	push_a_b(&stack_a, &stack_b);
-	push_b_a(&stack_b, &stack_a);
-	printf("stack a size:%d\n", stack_a.size);
-	printf("stack a before:%d %d %d\n", stack_a.array[0], stack_a.array[1], stack_a.array[2]);
-	one_stack_sort(&stack_a, stack_a.array[0], stack_a.array[1], stack_a.array[2]);
-	printf("stack a after:%d %d %d\n", stack_a.array[0], stack_a.array[1], stack_a.array[2]);
-	// push(stack_a, stack_b);
-	// push(stack_b, stack_a);
-	// print_linked_list(stack_a, stack_b);
+
+	printf("before: ");
+	while (i < stack_a.size)
+	{
+		printf("%d ", stack_a.array[i]);
+		i++;
+	}
+	two_stack_sort(&stack_a, &stack_b);
+	
+	i = 0;
+	printf("\n");
+	printf(" after: ");
+	while (i < stack_a.size)
+	{
+		printf("%d ", stack_a.array[i]);
+		i++;
+	}
+
 	return (0);
 }
