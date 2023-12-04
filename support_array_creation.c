@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   support_array_creation.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmitriinikiforov <dmitriinikiforov@stud    +#+  +:+       +#+        */
+/*   By: dnikifor <dnikifor@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 00:57:24 by dmitriiniki       #+#    #+#             */
-/*   Updated: 2023/12/04 01:13:11 by dmitriiniki      ###   ########.fr       */
+/*   Updated: 2023/12/04 11:29:59 by dnikifor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

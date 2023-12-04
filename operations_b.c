@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   operations_b.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmitriinikiforov <dmitriinikiforov@stud    +#+  +:+       +#+        */
+/*   By: dnikifor <dnikifor@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:33:13 by dnikifor          #+#    #+#             */
-/*   Updated: 2023/12/03 19:00:25 by dmitriiniki      ###   ########.fr       */
+/*   Updated: 2023/12/04 20:01:13 by dnikifor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ t_ps	*swap_b(t_ps *list)
         list->array[0] = list->array[1];
         list->array[1] = temp;
     } 
-	return (list);
 	write(1, "sb\n", 3);
+	return (list);
 }
 
 t_ps	*rotate_b(t_ps *list) 
@@ -45,8 +45,8 @@ t_ps	*rotate_b(t_ps *list)
 		}
 		list->array[list->size - 1] = temp;
 	}
-	return (list);
 	write(1, "rb\n", 3);
+	return (list);
 }
 
 t_ps	*reverse_rotate_b(t_ps *list)
@@ -66,8 +66,8 @@ t_ps	*reverse_rotate_b(t_ps *list)
 		}
 		list->array[0] = temp;
 	}
-	return (list);
 	write(1, "rrb\n", 4);
+	return (list);
 }
 
 void	push_b_a(t_ps *list_first, t_ps *list_second)
