@@ -5,14 +5,15 @@ CFLAGS = -g -Wall -Wextra -Werror
 
 LIBFT_DIR = libft/
 LIBFT = $(LIBFT_DIR)/libft.a
-SRCS = operations_a.c \
-  operations_b.c \
+SRCS = operations.c \
+  operations_extra.c \
   parser.c \
   main.c \
   one_stack_sort.c \
   mini_sort.c \
   support_array_creation.c \
-  sort.c
+  sort.c \
+  sort_rotation_extra.c
 
 OBJS = $(SRCS:.c=.o)
 

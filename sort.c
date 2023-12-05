@@ -6,7 +6,7 @@
 /*   By: dnikifor <dnikifor@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 11:29:36 by dnikifor          #+#    #+#             */
-/*   Updated: 2023/12/04 20:55:43 by dnikifor         ###   ########.fr       */
+/*   Updated: 2023/12/05 20:03:09 by dnikifor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,8 @@ static void	rotate_back(t_ps *stack_b)
 	{
 		while (index > 0)
 		{
-			rotate_b(stack_b);
+			rotate(stack_b);
+			write(1, "rb\n", 3);
 			index--;
 		}
 	}
@@ -45,13 +46,14 @@ static void	rotate_back(t_ps *stack_b)
 	{
 		while (stack_b->size - index > 0)
 		{
-			reverse_rotate_b(stack_b);
+			reverse_rotate(stack_b);
+			write(1, "rrb\n", 4);
 			index++;
 		}
 	}
 }
 
-static void	set_rotation(t_ps *stack_a, t_ps *stack_b, int min, int max)
+static void	set_rotation(t_ps *stack_a, t_ps *stack_b, int min, int max, int *rotations)
 {
 	int	i;
 
@@ -65,6 +67,7 @@ static void	set_rotation(t_ps *stack_a, t_ps *stack_b, int min, int max)
 		&& stack_b->array[0] > stack_a->array[0]
 		&& stack_b->array[stack_b->size - 1] < stack_a->array[0])
 	{
+		rotation_steps(rotations);
 		push_a_b(stack_a, stack_b);
 		return ;
 	}
@@ -80,7 +83,8 @@ static void	set_rotation(t_ps *stack_a, t_ps *stack_b, int min, int max)
 			{
 				while (i + 1 > 0)
 				{
-					rotate_b(stack_b);
+					rotate(stack_b);
+					rotations[1] += 1;
 					i--;
 				}
 				return ;
@@ -89,7 +93,8 @@ static void	set_rotation(t_ps *stack_a, t_ps *stack_b, int min, int max)
 			{
 				while (stack_b->size - i - 1 > 0)
 				{
-					reverse_rotate_b(stack_b);
+					reverse_rotate(stack_b);
+					rotations[3] += 1;
 					i++;
 				}
 				return ;
@@ -99,7 +104,7 @@ static void	set_rotation(t_ps *stack_a, t_ps *stack_b, int min, int max)
 	}
 }
 
-static void	set_rotation_min_max(t_ps *stack_b, int min, int max)
+static void	set_rotation_min_max(t_ps *stack_b, int min, int max, int *rotations)
 {
 	int	i;
 
@@ -113,7 +118,8 @@ static void	set_rotation_min_max(t_ps *stack_b, int min, int max)
 	{
 		while (i + 1 > 0)
 		{
-			rotate_b(stack_b);
+			rotate(stack_b);
+			rotations[1] += 1;
 			i--;
 		}
 	}
@@ -121,7 +127,8 @@ static void	set_rotation_min_max(t_ps *stack_b, int min, int max)
 	{
 		while (stack_b->size - i - 1 > 0)
 		{
-			reverse_rotate_b(stack_b);
+			reverse_rotate(stack_b);
+			rotations[3] += 1;
 			i++;
 		}
 	}
@@ -159,7 +166,7 @@ int	find_max_number(t_ps *stack_b)
 	return (max);
 }
 
-static void	find_place(t_ps *stack_a, t_ps *stack_b)
+static void	find_place(t_ps *stack_a, t_ps *stack_b, int *rotations)
 {
 	int	i;
 	int	min;
@@ -169,12 +176,12 @@ static void	find_place(t_ps *stack_a, t_ps *stack_b)
 	max = find_max_number(stack_b);
 	i = 0;
 	if (stack_a->array[0] < min || stack_a->array[0] > max)
-		set_rotation_min_max(stack_b, min, max);
+		set_rotation_min_max(stack_b, min, max, rotations);
 	else
-		set_rotation(stack_a, stack_b, min, max);
+		set_rotation(stack_a, stack_b, min, max, rotations);
 }
 
-static void	push_right_place_b(t_ps *stack_a, t_ps *stack_b, int cheap_index)
+static void	push_right_place_b(t_ps *stack_a, t_ps *stack_b, int cheap_index, int *rotations)
 {
 	int	temp;
 
@@ -182,21 +189,31 @@ static void	push_right_place_b(t_ps *stack_a, t_ps *stack_b, int cheap_index)
 	if (cheap_index < stack_a->size / 2)
 	{
 		while (stack_a->array[0] != temp)
-			rotate_a(stack_a);
+		{
+			rotate(stack_a);
+			rotations[0] += 1;
+		}
 	}
 	else
 	{
 		while (stack_a->array[0] != temp)
-			reverse_rotate_a(stack_a);
+		{
+			reverse_rotate(stack_a);
+			rotations[2] += 1;
+		}
 	}
 	if (stack_b->size == 0 || stack_b->size == 1)
+	{
+		rotation_steps(rotations);
 		push_a_b(stack_a, stack_b);
+	}
 	else
 	{
 		if (stack_b->size == 3)
 			three_num_desc_sort_b(stack_b, stack_b->array[0],
 				stack_b->array[1], stack_b->array[2]);
-		find_place(stack_a, stack_b);
+		find_place(stack_a, stack_b, rotations);
+		rotation_steps(rotations);
 		push_a_b(stack_a, stack_b);
 	}
 }
@@ -259,7 +276,7 @@ static int	find_cheapest(t_ps *stack_a, t_ps *support, int range_max, int start)
 	return (res);
 }
 
-static void	large_sort(t_ps *stack_a, t_ps *stack_b, t_ps *support)
+static void	large_sort(t_ps *stack_a, t_ps *stack_b, t_ps *support, int *rotations)
 {
 	int	counter;
 	int	chunk_size;
@@ -274,9 +291,9 @@ static void	large_sort(t_ps *stack_a, t_ps *stack_b, t_ps *support)
 	// if (stack_a->size > 100)
 	// 	chunk_size = 9;
 	if (stack_a->size <= 100)
-		chunk_size = 7;
+		chunk_size = 6;
 	else
-		chunk_size = 11;
+		chunk_size = 14;
 	range = 0;
 	cheap_index = 0;
 	while (counter < support->size)
@@ -286,7 +303,7 @@ static void	large_sort(t_ps *stack_a, t_ps *stack_b, t_ps *support)
 		while (counter < range && counter < support->size)
 		{
 			cheap_index = find_cheapest(stack_a, support, range, increment);
-			push_right_place_b(stack_a, stack_b, cheap_index);
+			push_right_place_b(stack_a, stack_b, cheap_index, rotations);
 			counter++;
 			// i = 0;
 			// while (i < stack_b->size)
@@ -299,8 +316,11 @@ static void	large_sort(t_ps *stack_a, t_ps *stack_b, t_ps *support)
 	}
 }
 
+// rotations array looks like: [ra, rb, rra, rrb]
 void	sort(t_ps *stack_a, t_ps *stack_b, t_ps *support)
 {
+	int rotations[4] = {0, 0, 0, 0};
+	
 	if (check_if_sorted(stack_a))
 		return ;
 	if (stack_a->size <= 10)
@@ -310,7 +330,7 @@ void	sort(t_ps *stack_a, t_ps *stack_b, t_ps *support)
 	}
 	else
 	{
-		large_sort(stack_a, stack_b, support);
+		large_sort(stack_a, stack_b, support, rotations);
 	}
 	rotate_back(stack_b);
 	push_back(stack_a, stack_b);

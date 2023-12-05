@@ -6,7 +6,7 @@
 /*   By: dnikifor <dnikifor@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:33:22 by dnikifor          #+#    #+#             */
-/*   Updated: 2023/12/04 20:42:59 by dnikifor         ###   ########.fr       */
+/*   Updated: 2023/12/05 19:07:48 by dnikifor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,18 @@ typedef struct s_ps
 	int	size;
 }	t_ps;
 
-t_ps	*swap_a(t_ps *list);
-t_ps	*reverse_rotate_a(t_ps *list);
-t_ps	*rotate_a(t_ps *list);
+void	swap_a(t_ps *list);
+void	swap_b(t_ps *list);
+void	rotate(t_ps *list);
+void	reverse_rotate(t_ps *list);
 void	push_a_b(t_ps *list_first, t_ps *list_second);
-
-t_ps	*swap_b(t_ps *list);
-t_ps	*rotate_b(t_ps *list);
-t_ps	*reverse_rotate_b(t_ps *list);
 void	push_b_a(t_ps *list_first, t_ps *list_second);
+void	rotation_steps(int *rotations);
+
+void	rotate_a(t_ps *list);
+void	reverse_rotate_a(t_ps *list);
+void	rotate_b(t_ps *list);
+void	reverse_rotate_b(t_ps *list);
 
 int		array_creation(t_ps *stack_a, t_ps *stack_b, int argc, char **argv);
 void	three_num_sort(t_ps *stack_a, int a, int b, int c);
