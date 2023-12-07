@@ -3,20 +3,11 @@ NAME = push_swap
 CC = clang
 CFLAGS = -g -Wall -Wextra -Werror
 
-LIBFT_DIR = libft/
+LIBFT_DIR = libft/libft
 LIBFT = $(LIBFT_DIR)/libft.a
-SRCS = operations.c \
-  operations_extra.c \
-  parser.c \
-  main.c \
-  one_stack_sort.c \
-  mini_sort.c \
-  support_array_creation.c \
-  sort.c \
-  sort_rotation_print.c \
-  rotations_without_write.c \
-  finders.c \
-  utils.c
+SRCS = operations.c operations_extra.c parser.c main.c one_stack_sort.c \
+  mini_sort.c support_array_creation.c sort.c sort_rotation_print.c \
+  rotations_without_write.c finders.c utils.c
 
 OBJS = $(SRCS:.c=.o)
 
@@ -33,8 +24,8 @@ $(NAME): $(SRCS) $(LIBFT)
 	@echo "$(GREEN)!!! Compilation completed successfully$(NC)"
 
 $(LIBFT):
-	@$(MAKE) -C libft/
-	@$(MAKE) bonus -C libft/
+	@$(MAKE) -C $(LIBFT_DIR)
+	@$(MAKE) bonus -C $(LIBFT_DIR)
 
 clean:
 	@rm -f $(OBJS)

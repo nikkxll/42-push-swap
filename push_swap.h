@@ -6,14 +6,14 @@
 /*   By: dnikifor <dnikifor@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:33:22 by dnikifor          #+#    #+#             */
-/*   Updated: 2023/12/07 18:41:10 by dnikifor         ###   ########.fr       */
+/*   Updated: 2023/12/07 19:36:48 by dnikifor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "./libft/libft.h"
+# include "./libft/libft/libft.h"
 
 typedef struct s_ps
 {
