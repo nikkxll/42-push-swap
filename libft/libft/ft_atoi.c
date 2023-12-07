@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dnikifor <dnikifor@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: dmitriinikiforov <dmitriinikiforov@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 10:32:19 by dnikifor          #+#    #+#             */
-/*   Updated: 2023/12/07 18:13:08 by dnikifor         ###   ########.fr       */
+/*   Updated: 2023/12/08 00:38:41 by dmitriiniki      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 //	The atoi() function converts the initial portion 
 //	of the string pointed to by str to int representation.
 
-#include "libft.h"
+#include "../libft.h"
 
 static int	sign_check(const char *str, int i)
 {

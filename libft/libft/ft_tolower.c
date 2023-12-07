@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dnikifor <dnikifor@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: dmitriinikiforov <dmitriinikiforov@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 10:20:24 by dnikifor          #+#    #+#             */
-/*   Updated: 2023/11/02 15:13:03 by dnikifor         ###   ########.fr       */
+/*   Updated: 2023/12/08 00:41:16 by dmitriiniki      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@
 //	the corresponding lower-case letter if there
 //	is one; otherwise, the argument is returned unchanged.
 
-#include "libft.h"
+#include "../libft.h"
 
 int	ft_tolower(int c)
 {

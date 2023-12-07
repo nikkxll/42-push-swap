@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dnikifor <dnikifor@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: dmitriinikiforov <dmitriinikiforov@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 15:46:34 by dnikifor          #+#    #+#             */
-/*   Updated: 2023/11/02 15:12:27 by dnikifor         ###   ########.fr       */
+/*   Updated: 2023/12/08 00:39:29 by dmitriiniki      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 //	The isascii() function tests for an ASCII character, which is any 
 //	character between 0 and octal 0177 inclusive.
 
-#include "libft.h"
+#include "../libft.h"
 
 int	ft_isascii(int c)
 {

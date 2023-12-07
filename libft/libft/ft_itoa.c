@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dnikifor <dnikifor@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: dmitriinikiforov <dmitriinikiforov@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 11:16:52 by dnikifor          #+#    #+#             */
-/*   Updated: 2023/11/02 15:12:31 by dnikifor         ###   ########.fr       */
+/*   Updated: 2023/12/08 00:39:37 by dmitriiniki      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 // representing the integer received as an argument.
 // Negative numbers must be handled.
 
-#include "libft.h"
+#include "../libft.h"
 
 static void	ft_char_cpy(char *dest, char src, int *position)
 {

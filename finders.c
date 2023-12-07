@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   finders.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dnikifor <dnikifor@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: dmitriinikiforov <dmitriinikiforov@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 13:46:33 by dnikifor          #+#    #+#             */
-/*   Updated: 2023/12/07 18:28:16 by dnikifor         ###   ########.fr       */
+/*   Updated: 2023/12/08 00:46:23 by dmitriiniki      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,11 +82,9 @@ int	find_top(t_ps *stack_a, t_ps *support, int range_max, int start)
 int	find_bottom(t_ps *stack_a, t_ps *support, int range_max, int start)
 {
 	int	i;
-	int	j;
 	int	temp;
 
 	i = stack_a->size;
-	j = 0;
 	temp = start;
 	while (i > 0)
 	{

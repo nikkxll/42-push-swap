@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dnikifor <dnikifor@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: dmitriinikiforov <dmitriinikiforov@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 11:15:57 by dnikifor          #+#    #+#             */
-/*   Updated: 2023/11/02 15:12:43 by dnikifor         ###   ########.fr       */
+/*   Updated: 2023/12/08 00:40:41 by dmitriiniki      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@
 // character ’c’ as a delimiter. The array must end
 // with a NULL pointer.
 
-#include "libft.h"
+#include "../libft.h"
 
 static int	char_is_separator(char ch, char c)
 {

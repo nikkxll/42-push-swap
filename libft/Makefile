@@ -1,36 +1,26 @@
 NAME = libft.a
-	
-OBJS = $(SRCS:.c=.o)
-OBJS_BONUS = $(SRCS_BONUS:.c=.o)
 
-CC = clang
-CFLAGS = -g -Wall -Wextra -Werror
-RM = rm -rf
+GREEN = \033[0;32m
+BLUE = \033[0;34m
+NC = \033[0m
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	@ar -rcs $(NAME) $(OBJS)
-	@ar -rcs ../$(NAME) $(OBJS)
-
-%.o: %.c
-	@$(CC) $(CFLAGS) -c $< -o $@
-
-bonus: .bonus
-
-.bonus: $(OBJS_BONUS)
-	@ar -rcs $(NAME) $(OBJS_BONUS)
-	@ar -rcs ../$(NAME) $(OBJS_BONUS)
-	@touch .bonus
+$(NAME):
+	@$(MAKE) -C libft/
+	@$(MAKE) bonus -C libft/
+	@echo "$(GREEN)⏳ Function GNL and libft added to the new library$(NC)"
+	@echo "$(GREEN)📚 Library 'libft.a' created$(NC)"
 
 clean:
-	@$(RM) $(OBJS) $(OBJS_BONUS)
-	@$(RM) .bonus
+	@$(MAKE) clean -C libft/
+	@echo "$(BLUE)🧹 Cleaned object files from libft$(NC)"
 
 fclean: clean
-	@$(RM) $(NAME)
-	@$(RM) ../$(NAME)
+	@-rm -f $(NAME)
+	@$(MAKE) -C libft/ fclean
+	@echo "$(BLUE)🧹 Removed '$(NAME)'$(NC)"
 
 re: fclean all
 
-.PHONY: all, clean, fclean, re, bonus
+.PHONY: all, clean, fclean, re

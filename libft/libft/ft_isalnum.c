@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dnikifor <dnikifor@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: dmitriinikiforov <dmitriinikiforov@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 15:31:51 by dnikifor          #+#    #+#             */
-/*   Updated: 2023/11/02 15:12:25 by dnikifor         ###   ########.fr       */
+/*   Updated: 2023/12/08 00:39:23 by dmitriiniki      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 //	The isalnum() function returns zero if the character tests 
 //	false and returns non-zero if the character tests true.
 
-#include "libft.h"
+#include "../libft.h"
 
 int	ft_isalnum(int c)
 {

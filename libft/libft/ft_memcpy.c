@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dnikifor <dnikifor@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: dmitriinikiforov <dmitriinikiforov@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 08:52:09 by dnikifor          #+#    #+#             */
-/*   Updated: 2023/11/02 15:12:35 by dnikifor         ###   ########.fr       */
+/*   Updated: 2023/12/08 00:40:11 by dmitriiniki      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 // RETURN VALUES
 //	The memcpy() function returns the original value of dst.
 
-#include "libft.h"
+#include "../libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {

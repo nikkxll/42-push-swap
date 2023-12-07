@@ -3,7 +3,7 @@ NAME = push_swap
 CC = clang
 CFLAGS = -g -Wall -Wextra -Werror
 
-LIBFT_DIR = libft/libft
+LIBFT_DIR = ./libft/
 LIBFT = $(LIBFT_DIR)/libft.a
 SRCS = operations.c operations_extra.c parser.c main.c one_stack_sort.c \
   mini_sort.c support_array_creation.c sort.c sort_rotation_print.c \
@@ -12,33 +12,27 @@ SRCS = operations.c operations_extra.c parser.c main.c one_stack_sort.c \
 OBJS = $(SRCS:.c=.o)
 
 GREEN = \033[0;32m
-RED = \033[0;31m
+BLUE = \033[0;34m
 NC = \033[0m
 
 all: $(NAME)
 
 $(NAME): $(SRCS) $(LIBFT)
-	@echo "$(GREEN)!!! Library 'libft.a' created$(NC)"
 	@$(CC) $(CFLAGS) $(SRCS) $(LIBFT) -o $(NAME)
-	@echo "$(GREEN)!!! Executable '$(NAME)' created$(NC)"
-	@echo "$(GREEN)!!! Compilation completed successfully$(NC)"
+	@echo "$(GREEN)✅ Compilation completed successfully$(NC)"
 
 $(LIBFT):
 	@$(MAKE) -C $(LIBFT_DIR)
-	@$(MAKE) bonus -C $(LIBFT_DIR)
 
 clean:
-	@rm -f $(OBJS)
-	@make -C $(LIBFT_DIR) clean
-	@echo "$(RED)!!! Cleaned object files$(NC)"
+	@$(MAKE) -C $(LIBFT_DIR) clean
 
-fclean: clean
+fclean:
 	@rm -f $(NAME)
+	@echo "$(BLUE)🧹 Removed '$(NAME)'$(NC)"
 	@make -C $(LIBFT_DIR) fclean
-	@echo "$(RED)!!! Removed '$(NAME)'$(NC)"
-	@echo "$(RED)!!! Cleaned everything$(NC)"
 
 re: fclean all
-	@echo "$(GREEN)!!! Everything recompiled$(NC)"
+	@echo "$(GREEN)🚀 Everything recompiled$(NC)"
 
 .PHONY: all clean fclean re

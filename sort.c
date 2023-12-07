@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dnikifor <dnikifor@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: dmitriinikiforov <dmitriinikiforov@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 11:29:36 by dnikifor          #+#    #+#             */
-/*   Updated: 2023/12/07 15:11:11 by dnikifor         ###   ########.fr       */
+/*   Updated: 2023/12/08 00:46:13 by dmitriiniki      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,12 @@
 
 static void	find_place(t_ps *stack_a, t_ps *stack_b, int *rotations)
 {
-	int	i;
 	int	min;
 	int	max;
 	int	position;
 
 	min = find_min_number(stack_b);
 	max = find_max_number(stack_b);
-	i = 0;
 	position = 0;
 	if (stack_a->array[0] < min || stack_a->array[0] > max)
 		set_rotation_min_max(stack_b, min, max, rotations);

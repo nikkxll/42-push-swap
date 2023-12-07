@@ -3,17 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dnikifor <dnikifor@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: dmitriinikiforov <dmitriinikiforov@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:33:22 by dnikifor          #+#    #+#             */
-/*   Updated: 2023/12/07 19:36:48 by dnikifor         ###   ########.fr       */
+/*   Updated: 2023/12/08 00:42:26 by dmitriiniki      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "./libft/libft/libft.h"
+# include "./libft/libft.h"
+# include "./libft/libft/get_next_line.h"
 
 typedef struct s_ps
 {

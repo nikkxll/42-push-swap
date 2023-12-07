@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmitriinikiforov <dmitriinikiforov@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/23 18:20:33 by dnikifor          #+#    #+#             */
-/*   Updated: 2023/12/08 00:38:45 by dmitriiniki      ###   ########.fr       */
+/*   Created: 2023/11/09 18:53:31 by dnikifor          #+#    #+#             */
+/*   Updated: 2023/12/08 00:44:41 by dmitriiniki      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// SYNOPSIS
-//	#include <strings.h>
-//	void bzero(void *s, size_t n);
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-// DESCRIPTION
-//	The bzero() function writes n zeroed bytes to the string s.  
-//	If n is zero, bzero() does nothing.
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1000000
+# endif
 
-#include "../libft.h"
+# include <stdlib.h>
+# include <unistd.h>
 
-void	ft_bzero(void *s, size_t n)
-{
-	ft_memset(s, '\0', n);
-}
+size_t	ft_strlen(const char *s);
+char	*ft_strchr(const char *s, int c);
+char	*ft_strjoin_gnl(char *s1, char *s2);
+char	*get_next_line(int fd);
+void	*ft_free(char *str_to_free);
+
+#endif

@@ -10,9 +10,11 @@ SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 SRCS_BONUS = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c \
   ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c \
   ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
+SRCS_GNL = get_next_line.c get_next_line_utils.c
 	
 OBJS = $(SRCS:.c=.o)
 OBJS_BONUS = $(SRCS_BONUS:.c=.o)
+OBJS_GNL = $(SRCS_GNL:.c=.o)
 
 CC = clang
 CFLAGS = -g -Wall -Wextra -Werror
@@ -20,9 +22,9 @@ RM = rm -rf
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	@ar -rcs $(NAME) $(OBJS)
-	@ar -rcs ../$(NAME) $(OBJS)
+$(NAME): $(OBJS) $(OBJS_GNL)
+	@ar -rcs $(NAME) $(OBJS) $(OBJS_GNL)
+	@ar -rcs ../$(NAME) $(OBJS) $(OBJS_GNL)
 
 %.o: %.c
 	@$(CC) $(CFLAGS) -c $< -o $@
@@ -35,7 +37,7 @@ bonus: .bonus
 	@ touch .bonus
 
 clean:
-	@$(RM) $(OBJS) $(OBJS_BONUS)
+	@$(RM) $(OBJS) $(OBJS_BONUS) $(OBJS_GNL)
 	@$(RM) .bonus
 
 fclean: clean
