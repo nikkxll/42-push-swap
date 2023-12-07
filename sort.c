@@ -6,7 +6,7 @@
 /*   By: dnikifor <dnikifor@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 11:29:36 by dnikifor          #+#    #+#             */
-/*   Updated: 2023/12/05 20:03:09 by dnikifor         ###   ########.fr       */
+/*   Updated: 2023/12/07 13:22:12 by dnikifor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -282,7 +282,6 @@ static void	large_sort(t_ps *stack_a, t_ps *stack_b, t_ps *support, int *rotatio
 	int	chunk_size;
 	int	range;
 	int	cheap_index;
-	int	increment;
 	// int i;
 
 	// i = 0;
@@ -293,16 +292,19 @@ static void	large_sort(t_ps *stack_a, t_ps *stack_b, t_ps *support, int *rotatio
 	if (stack_a->size <= 100)
 		chunk_size = 6;
 	else
-		chunk_size = 14;
+		chunk_size = 13;
 	range = 0;
 	cheap_index = 0;
 	while (counter < support->size)
 	{
-		increment = range;
+		if (counter > stack_a->size / 2 && stack_a->size <= 100 && support->size <= 100)
+			chunk_size = 9;
+		if (counter > stack_a->size / 2 && support->size > 100)
+			chunk_size = 20;
 		range += support->size / chunk_size;
 		while (counter < range && counter < support->size)
 		{
-			cheap_index = find_cheapest(stack_a, support, range, increment);
+			cheap_index = find_cheapest(stack_a, support, range, range - support->size / chunk_size);
 			push_right_place_b(stack_a, stack_b, cheap_index, rotations);
 			counter++;
 			// i = 0;
@@ -329,9 +331,7 @@ void	sort(t_ps *stack_a, t_ps *stack_b, t_ps *support)
 		return ;
 	}
 	else
-	{
 		large_sort(stack_a, stack_b, support, rotations);
-	}
 	rotate_back(stack_b);
 	push_back(stack_a, stack_b);
 }
