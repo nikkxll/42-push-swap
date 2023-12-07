@@ -13,7 +13,10 @@ SRCS = operations.c \
   mini_sort.c \
   support_array_creation.c \
   sort.c \
-  sort_rotation_extra.c
+  sort_rotation_print.c \
+  rotations_without_write.c \
+  finders.c \
+  utils.c
 
 OBJS = $(SRCS:.c=.o)
 

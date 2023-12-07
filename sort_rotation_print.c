@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_rotation_extra.c                              :+:      :+:    :+:   */
+/*   sort_rotation_print.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dnikifor <dnikifor@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 17:29:41 by dnikifor          #+#    #+#             */
-/*   Updated: 2023/12/05 19:59:51 by dnikifor         ###   ########.fr       */
+/*   Updated: 2023/12/07 15:00:57 by dnikifor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ static void	rotation_steps_utils_second(int *rotations, int a, int b)
 
 void	rotation_steps(int *rotations)
 {
-	while(rotations[0] != 0 || rotations[1] != 0
+	while (rotations[0] != 0 || rotations[1] != 0
 		|| rotations[2] != 0 || rotations[3] != 0)
 	{
 		rotation_steps_utils_first(rotations, 0, 1);

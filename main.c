@@ -6,20 +6,31 @@
 /*   By: dnikifor <dnikifor@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 12:39:04 by dnikifor          #+#    #+#             */
-/*   Updated: 2023/12/05 19:47:42 by dnikifor         ###   ########.fr       */
+/*   Updated: 2023/12/07 17:50:50 by dnikifor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	msg_memory_free(t_ps *stack_a, t_ps *stack_b)
+{
+	free(stack_a->array);
+	free(stack_b->array);
+	return (1);
+}
+
+static void	memory_free(t_ps *stack_a, t_ps *stack_b, t_ps *support)
+{
+	free(support->array);
+	free(stack_a->array);
+	free(stack_b->array);
+}
 
 int	main(int argc, char *argv[])
 {
 	t_ps	stack_a;
 	t_ps	stack_b;
 	t_ps	support;
-	// int		i;
-
-	// i = 0;
 
 	if (argc < 2)
 	{
@@ -27,38 +38,19 @@ int	main(int argc, char *argv[])
 		return (0);
 	}
 	if (array_creation(&stack_a, &stack_b, argc, argv))
+	{
+		write(2, "Error\n", 6);
 		return (0);
+	}
 	support.array = (int *)malloc((argc - 1) * sizeof(int));
+	if (!support.array)
+	{
+		msg_memory_free(&stack_a, &stack_b);
+		write(2, "Error\n", 6);
+		return (0);
+	}
 	support_array_creation(&support, &stack_a);
-
-
-	// printf("\nbefore: ");
-	// while (i < stack_a.size)
-	// {
-	// 	printf("%d ", stack_a.array[i]);
-	// 	i++;
-	// }
-
-
-
 	sort(&stack_a, &stack_b, &support);
-
-
-
-	// i = 0;
-	// printf("\n");
-	// printf(" after: ");
-	// while (i < stack_a.size)
-	// {
-	// 	printf("%d ", stack_a.array[i]);
-	// 	i++;
-	// }
-	// i = 0;
-	// printf("\nsupport: ");
-	// while (i < support.size)
-	// {
-	// 	printf("%d ", support.array[i]);
-	// 	i++;
-	// }
+	memory_free(&stack_a, &stack_b, &support);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: dnikifor <dnikifor@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 10:32:19 by dnikifor          #+#    #+#             */
-/*   Updated: 2023/11/03 08:41:56 by dnikifor         ###   ########.fr       */
+/*   Updated: 2023/12/07 18:13:08 by dnikifor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,7 @@ static int	numb_check(const char *str, int sign, int i, long num)
 		num *= 10;
 		num += str[i] - '0';
 		i++;
-		if (num < 0 && sign == 1)
-			return (-1);
-		else if (num < 0 && sign == -1)
+		if (sign * num > 2147483647 || sign * num < -2147483648)
 			return (0);
 	}
 	return (sign * num);

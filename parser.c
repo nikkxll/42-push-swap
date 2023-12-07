@@ -6,23 +6,36 @@
 /*   By: dnikifor <dnikifor@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 18:49:09 by dnikifor          #+#    #+#             */
-/*   Updated: 2023/12/04 11:29:52 by dnikifor         ###   ########.fr       */
+/*   Updated: 2023/12/07 18:18:00 by dnikifor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	converter(t_ps *list, int argc, char **argv)
+static int	converter(t_ps *list, int argc, char **argv)
 {
 	int	i;
+	int	j;
 
 	i = 1;
+	j = 0;
 	while (i < argc)
 	{
 		list->array[i - 1] = ft_atoi(argv[i]);
+		if (list->array[i - 1] == 0)
+		{
+			while (argv[i][j] != '\0')
+			{
+				j = 0;
+				if (argv[i][j] != '0')
+					return (1);
+				j++;
+			}
+		}
 		i++;
 	}
 	list->size = argc - 1;
+	return (0);
 }
 
 static int	check_duplicates(int argc, t_ps *stack_a)
@@ -56,13 +69,13 @@ static int	is_valid_args(int argc, char **argv)
 	{
 		j = 0;
 		if (argv[i][j] == 0)
-			return (write(2, "Error\n", 6));
+			return (1);
+		if (argv[i][j] == '-' || argv[i][j] == '+')
+			j++;
 		while (argv[i][j] != '\0')
 		{
-			if (argv[i][j] == '-' || argv[i][j] == '+')
-				j++;
 			if (argv[i][j] < 48 || argv[i][j] > 57)
-				return (write(2, "Error\n", 6));
+				return (1);
 			j++;
 		}
 		i++;
@@ -82,10 +95,11 @@ int	array_creation(t_ps *stack_a, t_ps *stack_b, int argc, char **argv)
 		return (1);
 	}
 	stack_b->size = 0;
-	if (is_valid_args(argc, argv) != 0)
-		return (1);
-	converter(stack_a, argc, argv);
+	if (is_valid_args(argc, argv))
+		return (msg_memory_free(stack_a, stack_b));
+	if (converter(stack_a, argc, argv))
+		return (msg_memory_free(stack_a, stack_b));
 	if (check_duplicates(argc, stack_a))
-		return (write(2, "Error\n", 6));
+		return (msg_memory_free(stack_a, stack_b));
 	return (0);
 }
