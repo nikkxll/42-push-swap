@@ -4,7 +4,7 @@
 
 This project involves sorting a stack of integers named 'a' using various operations. The goal is to organize the numbers in stack 'a' in ascending order. To accomplish this, you have a set of operations available to manipulate the stacks and sort the elements.
 
-<h2>Operations Available</h2>
+<h2>Operations available</h2>
 
 - sa (swap a): Swap the first 2 elements at the top of stack a.
 - sb (swap b): Swap the first 2 elements at the top of stack b.
@@ -18,7 +18,7 @@ This project involves sorting a stack of integers named 'a' using various operat
 - rrb (reverse rotate b): Shift down all elements of stack b by 1.
 - rrr: Perform rra and rrb simultaneously.
 
-<h2>Push_swap Program</h2>
+<h2>Push_swap program</h2>
 
 The push_swap program sorts the stack 'a' with the fewest possible operations and displays the instructions required. Here are the specifications and requirements for the push_swap program:
 
