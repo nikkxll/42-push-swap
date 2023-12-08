@@ -1,4 +1,4 @@
-Push_swap
+<h1>Push_swap</h2>
 
 Introduction
 
