@@ -6,11 +6,11 @@
 /*   By: dnikifor <dnikifor@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 17:29:41 by dnikifor          #+#    #+#             */
-/*   Updated: 2023/12/07 15:00:57 by dnikifor         ###   ########.fr       */
+/*   Updated: 2023/12/08 18:21:32 by dnikifor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 static void	rotation_steps_utils_first(int *rotations, int a, int b)
 {

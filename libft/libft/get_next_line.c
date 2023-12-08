@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmitriinikiforov <dmitriinikiforov@stud    +#+  +:+       +#+        */
+/*   By: dnikifor <dnikifor@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 16:57:03 by dnikifor          #+#    #+#             */
-/*   Updated: 2023/12/08 00:44:21 by dmitriiniki      ###   ########.fr       */
+/*   Updated: 2023/12/08 18:25:01 by dnikifor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,22 +112,22 @@ char	*str_extractor(char *text_runner, int fd)
 char	*get_next_line(int fd)
 {
 	char		*current_line;
-	static char	*text_runner;
+	static char	*text_runner[OPEN_MAX];
 
 	if (fd < 0 || BUFFER_SIZE <= 0 || BUFFER_SIZE >= (size_t)(-2))
 		return (NULL);
-	text_runner = str_extractor(text_runner, fd);
-	if (!text_runner)
+	text_runner[fd] = str_extractor(text_runner[fd], fd);
+	if (!text_runner[fd])
 	{
-		text_runner = NULL;
+		text_runner[fd] = NULL;
 		return (NULL);
 	}
-	current_line = ft_strcpy_curr_line(text_runner);
+	current_line = ft_strcpy_curr_line(text_runner[fd]);
 	if (!current_line)
 	{
-		text_runner = ft_free(text_runner);
+		text_runner[fd] = ft_free(text_runner[fd]);
 		return (NULL);
 	}
-	text_runner = ft_strcpy_remainder(text_runner);
+	text_runner[fd] = ft_strcpy_remainder(text_runner[fd]);
 	return (current_line);
 }

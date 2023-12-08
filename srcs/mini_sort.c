@@ -6,11 +6,11 @@
 /*   By: dnikifor <dnikifor@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 17:33:27 by dnikifor          #+#    #+#             */
-/*   Updated: 2023/12/04 19:44:20 by dnikifor         ###   ########.fr       */
+/*   Updated: 2023/12/08 18:21:07 by dnikifor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	check_if_sorted(t_ps *stack_a)
 {

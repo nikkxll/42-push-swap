@@ -6,11 +6,11 @@
 /*   By: dnikifor <dnikifor@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 12:50:40 by dnikifor          #+#    #+#             */
-/*   Updated: 2023/12/05 19:05:29 by dnikifor         ###   ########.fr       */
+/*   Updated: 2023/12/08 18:21:08 by dnikifor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	three_num_sort(t_ps *list, int a, int b, int c)
 {

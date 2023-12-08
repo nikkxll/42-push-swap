@@ -6,11 +6,11 @@
 /*   By: dnikifor <dnikifor@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 13:27:09 by dnikifor          #+#    #+#             */
-/*   Updated: 2023/12/07 18:25:29 by dnikifor         ###   ########.fr       */
+/*   Updated: 2023/12/08 18:21:28 by dnikifor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	rotate(t_ps *list)
 {
@@ -50,4 +50,16 @@ void	reverse_rotate(t_ps *list)
 		}
 		list->array[0] = temp;
 	}
+}
+
+void	rotate_each(t_ps *s_a, t_ps *s_b)
+{
+	rotate(s_a);
+	rotate(s_b);
+}
+
+void	reverse_rotate_each(t_ps *s_a, t_ps *s_b)
+{
+	reverse_rotate(s_a);
+	reverse_rotate(s_b);
 }

@@ -6,11 +6,11 @@
 /*   By: dnikifor <dnikifor@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:33:13 by dnikifor          #+#    #+#             */
-/*   Updated: 2023/12/07 14:40:16 by dnikifor         ###   ########.fr       */
+/*   Updated: 2023/12/08 18:21:12 by dnikifor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	swap_a(t_ps *list)
 {

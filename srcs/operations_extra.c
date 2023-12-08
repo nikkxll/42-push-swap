@@ -6,11 +6,11 @@
 /*   By: dnikifor <dnikifor@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 19:06:27 by dnikifor          #+#    #+#             */
-/*   Updated: 2023/12/07 14:41:23 by dnikifor         ###   ########.fr       */
+/*   Updated: 2023/12/08 18:21:10 by dnikifor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	rotate_a(t_ps *list)
 {

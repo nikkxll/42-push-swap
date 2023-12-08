@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmitriinikiforov <dmitriinikiforov@stud    +#+  +:+       +#+        */
+/*   By: dnikifor <dnikifor@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:33:22 by dnikifor          #+#    #+#             */
-/*   Updated: 2023/12/08 00:42:26 by dmitriiniki      ###   ########.fr       */
+/*   Updated: 2023/12/08 17:54:05 by dnikifor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ int		find_top(t_ps *stack_a, t_ps *support, int range_max, int start);
 int		find_bottom(t_ps *stack_a, t_ps *support, int range_max, int start);
 
 int		msg_memory_free(t_ps *stack_a, t_ps *stack_b);
+t_ps	*push_swap(int argc, char *argv[]);
+void	throw_error(void);
 
 int		check_if_sorted(t_ps *stack_a);
 void	push_back(t_ps *stack_a, t_ps *stack_b);
@@ -42,7 +44,6 @@ void	rotate_a(t_ps *list);
 void	reverse_rotate_a(t_ps *list);
 void	rotate_b(t_ps *list);
 void	reverse_rotate_b(t_ps *list);
-
 void	swap_a(t_ps *list);
 void	swap_b(t_ps *list);
 void	push_a_b(t_ps *list_first, t_ps *list_second);
@@ -52,6 +53,11 @@ int		array_creation(t_ps *stack_a, t_ps *stack_b, int argc, char **argv);
 
 void	rotate(t_ps *list);
 void	reverse_rotate(t_ps *list);
+void	rotate_each(t_ps *s_a, t_ps *s_b);
+void	reverse_rotate_each(t_ps *s_a, t_ps *s_b);
+void	swap(t_ps *list);
+void	push(t_ps *list_first, t_ps *list_second);
+void	swap_each(t_ps *s_a, t_ps *s_b);
 
 void	rotation_steps(int *rotations);
 

@@ -6,11 +6,11 @@
 /*   By: dnikifor <dnikifor@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 13:52:11 by dnikifor          #+#    #+#             */
-/*   Updated: 2023/12/07 19:36:46 by dnikifor         ###   ########.fr       */
+/*   Updated: 2023/12/08 18:21:39 by dnikifor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	rot_a_condition(t_ps *stack_a, int c_i, int temp, int *rotations)
 {

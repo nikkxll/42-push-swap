@@ -6,11 +6,11 @@
 /*   By: dnikifor <dnikifor@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 18:43:55 by dnikifor          #+#    #+#             */
-/*   Updated: 2023/12/07 18:43:58 by dnikifor         ###   ########.fr       */
+/*   Updated: 2023/12/08 18:21:37 by dnikifor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 static void	swap_support(int *a, int *b)
 {

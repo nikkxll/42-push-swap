@@ -6,11 +6,11 @@
 /*   By: dnikifor <dnikifor@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 18:49:09 by dnikifor          #+#    #+#             */
-/*   Updated: 2023/12/07 18:18:00 by dnikifor         ###   ########.fr       */
+/*   Updated: 2023/12/08 18:21:14 by dnikifor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 static int	converter(t_ps *list, int argc, char **argv)
 {
