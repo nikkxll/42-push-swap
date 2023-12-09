@@ -6,7 +6,7 @@
 /*   By: dnikifor <dnikifor@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 12:39:04 by dnikifor          #+#    #+#             */
-/*   Updated: 2023/12/08 18:21:24 by dnikifor         ###   ########.fr       */
+/*   Updated: 2023/12/09 15:13:28 by dnikifor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,27 +15,10 @@
 void	throw_error(void)
 {
 	write(2, "Error\n", 6);
-	exit(EXIT_FAILURE);
+	exit(1);
 }
 
-int	msg_memory_free(t_ps *stack_a, t_ps *stack_b)
-{
-	free(stack_a->array);
-	free(stack_b->array);
-	free(stack_a);
-	free(stack_b);
-	return (1);
-}
-
-static void	memory_free(t_ps *stack_b, t_ps *support)
-{
-	free(support->array);
-	free(stack_b->array);
-	free(support);
-	free(stack_b);
-}
-
-static void	support_creation(t_ps *sup, t_ps *s_a, t_ps *s_b, int argc)
+void	support_creation(t_ps *sup, t_ps *s_a, t_ps *s_b, int argc)
 {
 	if (!sup)
 	{
@@ -59,7 +42,9 @@ t_ps	*push_swap(int argc, char *argv[])
 	t_ps	*support;
 
 	if (argc < 2)
-		throw_error();
+		return (NULL);
+	if (argc == 2 && count_nums(argv[1]) > 1)
+		return (push_swap_one_arg(count_nums(argv[1]) + 1, argv));
 	stack_a = (t_ps *)malloc(sizeof(t_ps));
 	if (!stack_a)
 		throw_error();

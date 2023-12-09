@@ -6,7 +6,7 @@
 /*   By: dnikifor <dnikifor@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 16:57:03 by dnikifor          #+#    #+#             */
-/*   Updated: 2023/12/08 18:25:01 by dnikifor         ###   ########.fr       */
+/*   Updated: 2023/12/09 12:48:12 by dnikifor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ char	*str_extractor(char *text_runner, int fd)
 	buffer = (char *)malloc((BUFFER_SIZE + 1) * sizeof(char));
 	if (!buffer)
 		return (ft_free(text_runner));
-	while (!ft_strchr(text_runner, '\n') && bytes > 0)
+	while (!ft_strchr_gnl(text_runner, '\n') && bytes > 0)
 	{
 		bytes = read(fd, buffer, BUFFER_SIZE);
 		if (bytes == -1)

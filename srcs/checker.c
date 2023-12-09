@@ -6,7 +6,7 @@
 /*   By: dnikifor <dnikifor@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 12:01:06 by dnikifor          #+#    #+#             */
-/*   Updated: 2023/12/08 18:21:01 by dnikifor         ###   ########.fr       */
+/*   Updated: 2023/12/09 10:57:23 by dnikifor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ int	main(int argc, char **argv)
 	char	*line;
 
 	if (argc < 2)
-		throw_error();
+		return (0);
 	b = (t_ps *)malloc(sizeof(t_ps));
 	if (!b)
 		throw_error();

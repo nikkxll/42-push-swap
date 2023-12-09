@@ -6,7 +6,7 @@
 /*   By: dnikifor <dnikifor@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:33:22 by dnikifor          #+#    #+#             */
-/*   Updated: 2023/12/08 17:54:05 by dnikifor         ###   ########.fr       */
+/*   Updated: 2023/12/09 12:38:06 by dnikifor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,14 @@ int		find_top(t_ps *stack_a, t_ps *support, int range_max, int start);
 int		find_bottom(t_ps *stack_a, t_ps *support, int range_max, int start);
 
 int		msg_memory_free(t_ps *stack_a, t_ps *stack_b);
+void	memory_free(t_ps *stack_b, t_ps *support);
+void	free_aft_sup(t_ps *stack_a, t_ps *stack_b, int argc, char **args);
+void	free_aft_sa(int argc, char **args);
+void	free_aft_sb(t_ps *stack_a, int argc, char **args);
+
 t_ps	*push_swap(int argc, char *argv[]);
 void	throw_error(void);
+void	support_creation(t_ps *sup, t_ps *s_a, t_ps *s_b, int argc);
 
 int		check_if_sorted(t_ps *stack_a);
 void	push_back(t_ps *stack_a, t_ps *stack_b);
@@ -70,5 +76,9 @@ void	rot_b_condition(t_ps *stack_b, int i, int *rotations);
 void	set_rotation_min_max(t_ps *stack_b, int min, int max, int *rotations);
 void	rotate_back(t_ps *stack_b);
 int		set_rotation(t_ps *stack_a, t_ps *stack_b, int min, int max);
+
+int		count_nums(const char *str);
+t_ps	*push_swap_one_arg(int argc, char *argv[]);
+void	free_args(int argc, char **str);
 
 #endif
