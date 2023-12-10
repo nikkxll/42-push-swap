@@ -1,8 +1,12 @@
 <h1>Push_swap</h1>
 
+<h2>Results</h2>
+
+<h3>Passed with 122/100 ✅</h3>
+
 <h2>Introduction</h2>
 
-This project involves sorting a stack of integers named 'a' using various operations. The goal is to organize the numbers in stack 'a' in ascending order. To accomplish this, you have a set of operations available to manipulate the stacks and sort the elements.
+This Hive Helsinki (School 42) project involves sorting a stack of integers named 'a' using stack "b" and various operations. The goal is to organize the numbers in stack 'a' in ascending order. To accomplish this, you have a set of operations available to manipulate the stacks and sort the elements.
 
 <h2>Operations available</h2>
 
@@ -31,3 +35,18 @@ Evaluation Criteria: The goal is to sort the stack with the lowest possible numb
 Error Handling: In case of errors (e.g., non-integer arguments, duplicates, integer overflow), display "Error" followed by a '\n' on the standard error.
 
 No Parameters: If no parameters are specified, the program should not display anything and return to the prompt.
+
+<h2>Checker program (bonus part)</h2>
+
+<h3>Description:</h3>
+The "checker" program is a crucial component for validating the sorting process of a stack of integers. This program works in conjunction with the 'push_swap' program and serves as a verification tool. It takes in a list of integers and executes a series of instructions provided via standard input. The primary objective is to confirm if the given instructions successfully sort the stack.
+
+<h3>Execution guidelines and validation criteria:</h3>
+
+- The first argument represents the top of the stack 'a'.
+- If no argument is provided, the program halts and displays nothing.
+- Reads and executes instructions from standard input (each followed by '\n').
+- Executes these instructions on the given stack.
+- If after executing the instructions, stack 'a' is sorted, and stack 'b' is empty, it displays "OK" on the standard output followed by '\n'.
+- For any other scenario, it displays "KO" on the standard output followed by '\n'.
+- Errors are handled and displayed as "Error" on the standard error. These errors encompass non-integer arguments, integers exceeding limits, duplicates, invalid or incorrectly formatted instructions.
