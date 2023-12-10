@@ -1,7 +1,7 @@
 # Push_swap
 
 ## Table of Contents
-- [Results](#results)
+- [Result](#result)
 - [Introduction](#introduction)
 - [Operations available](#operations-available)
 - [Push_swap program](#push_swap-program)
@@ -10,9 +10,9 @@
 - [Description](#description)
 - [Checker program usage](#checker-program-usage)
 
-## Results
+## Result
 
-### Passed with 122/100 ✅
+Passed with 122/100 ✅
 
 ## Introduction
 
