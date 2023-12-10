@@ -3,6 +3,12 @@
 ## Table of Contents
 - [Results](#results)
 - [Introduction](#introduction)
+- [Operations available](#operations-available)
+- [Push_swap program](#push_swap-program)
+- [Push-swap program usage](#push-swap-program-usage)
+- [Checker program (bonus part)](#checker-program-bonus-part)
+- [Description](#description)
+- [Checker program usage](#checker-program-usage)
 
 ## Results
 
@@ -40,7 +46,7 @@ Error Handling: In case of errors (e.g., non-integer arguments, duplicates, inte
 
 No Parameters: If no parameters are specified, the program should not display anything and return to the prompt.
 
-## Usage
+## Push-swap program usage
 
 To the code use "make" command to compile an executable and then run it like this:
 
@@ -77,7 +83,7 @@ The "checker" program is a crucial component for validating the sorting process 
 - For any other scenario, it displays "KO" on the standard output followed by '\n'.
 - Errors are handled and displayed as "Error" on the standard error. These errors encompass non-integer arguments, integers exceeding limits, duplicates, invalid or incorrectly formatted instructions.
 
-## Usage
+## Checker program usage
 
 ```shell
 $>./checker 3 2 1 0
